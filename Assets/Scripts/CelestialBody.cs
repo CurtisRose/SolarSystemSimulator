@@ -79,6 +79,11 @@ public class CelestialBody : MonoBehaviour
         
     }
 
+    public Transform GetBody()
+    {
+        return body;
+    }
+
     public void Die()
     {
         Destroy(this.gameObject);

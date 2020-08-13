@@ -8,6 +8,9 @@ public class SolarSystem : MonoBehaviour
     [SerializeField]
     Transform celestialBodyPrefab;
 
+    [SerializeField]
+    Material material;
+
     private List<CelestialBody> celestialBodies = new List<CelestialBody>();
 
     public int numCelestialBodies = 0;
@@ -46,6 +49,7 @@ public class SolarSystem : MonoBehaviour
             rb.velocity = startingTranslationalVelocity * (new Vector3(Random.Range(-1f, 1f), Random.Range(-0.5f, 0.5f), Random.Range(-1f, 1f)));
             rb.angularVelocity = startingRotationalVelocity * (new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
             celestialBody.transform.position = startingPositionScalar * new Vector3(Random.Range(-1f,1f), Random.Range(-0.1f, 0.1f), Random.Range(-1f, 1f));
+            celestialBody.GetBody().GetComponent<Renderer>().material = material;
         }
     }
 
