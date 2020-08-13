@@ -77,7 +77,7 @@ public class SolarSystem : MonoBehaviour
     {
         foreach (CelestialBody celestialBody in GetComponentsInChildren<CelestialBody>())
         {
-            celestialBody.GetComponent<TrailRenderer>().enabled = enabled;
+            celestialBody.GetComponent<TrailRenderer>().enabled = enable;
         }
     }
 }
