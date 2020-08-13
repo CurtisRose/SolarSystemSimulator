@@ -32,6 +32,8 @@ public class CelestialBody : MonoBehaviour
 
         solarSystem = GetComponentInParent<SolarSystem>();
         solarSystem.AddCelestialBody(this);
+        rb.velocity = new Vector3(0f,0f,0f);
+        rb.angularVelocity = new Vector3(0f, 0f, 0f);
 
         //rb.velocity = startingVelocity * (new Vector3(Random.Range(-1f, 1f), Random.Range(-0.5f, 0.5f), Random.Range(-1f, 1f)));
         //rb.angularVelocity = startingVelocity * (new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
@@ -41,6 +43,7 @@ public class CelestialBody : MonoBehaviour
     private void FixedUpdate()
     {
         ApplyForces();
+        rb.angularVelocity = new Vector3(0f, 0f, 0f);
         force = new Vector3(0f, 0f, 0f);
     }
 

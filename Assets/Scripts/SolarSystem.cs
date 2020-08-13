@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SolarSystem : MonoBehaviour
 {
+    public Transform centerOfMass;
+
     [SerializeField]
     Transform celestialBodyPrefab;
 
