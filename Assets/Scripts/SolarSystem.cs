@@ -73,8 +73,11 @@ public class SolarSystem : MonoBehaviour
         }
     }
 
-    public void Merge()
+    public void EnableTrailRenderer(bool enable)
     {
-       
+        foreach (CelestialBody celestialBody in GetComponentsInChildren<CelestialBody>())
+        {
+            celestialBody.GetComponent<TrailRenderer>().enabled = enabled;
+        }
     }
 }

@@ -17,7 +17,6 @@ public class Planetoid : MonoBehaviour
     {
         foreach(CelestialBody celestialBody in GetComponentsInChildren<CelestialBody>())
         {
-            Debug.Log("TEST");
             celestialBody.AddForce(startingVelocity);
             celestialBody.GetBody().GetComponent<Renderer>().material = material;
         }
