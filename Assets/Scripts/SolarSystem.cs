@@ -55,8 +55,12 @@ public class SolarSystem : MonoBehaviour
 
     void FixedUpdate()
     {
+        float totalMass = 0;
+        Vector3 centerOfMassVector = new Vector3(0f, 0f, 0f);
         for (int i = 0; i < celestialBodies.Count; i++)
         {
+            totalMass += celestialBodies[i].GetMass();
+            centerOfMassVector += celestialBodies[i].transform.position;
             for (int j = i + 1; j < celestialBodies.Count; j++)
             {
                 Vector3 forceVector = new Vector3(0, 0, 0);
@@ -71,6 +75,8 @@ public class SolarSystem : MonoBehaviour
                 }
             }
         }
+        centerOfMassVector /= totalMass;
+        centerOfMass.position = centerOfMassVector;
     }
 
     public void EnableTrailRenderer(bool enable)
@@ -79,5 +85,10 @@ public class SolarSystem : MonoBehaviour
         {
             celestialBody.GetComponent<TrailRenderer>().enabled = enable;
         }
+    }
+
+    public void EnableCenterOfMass(bool enable)
+    {
+        centerOfMass.gameObject.SetActive(enable);
     }
 }
