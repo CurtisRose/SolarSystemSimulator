@@ -234,7 +234,11 @@ MonoBehaviour:
   centerOfMass: {fileID: 1193734501}
   celestialBodyPrefab: {fileID: 905355385727512536, guid: 44070de24d3407346a5ba6a9bb2fa10e,
     type: 3}
-  material: {fileID: 2100000, guid: 69239cb1680541a47b46b00c669800b9, type: 2}
+  celestialMaterial: {fileID: 2100000, guid: 69239cb1680541a47b46b00c669800b9, type: 2}
+  trailRendererMaterialStart: {fileID: 2100000, guid: aef450a8233cafa4bb0f67bcb1c013dc,
+    type: 2}
+  trailRendererMaterialEscape: {fileID: 2100000, guid: f0dd03351265ca048860c9eb186d1b18,
+    type: 2}
   numCelestialBodies: 100
   startingTranslationalVelocity: 0
   startingRotationalVelocity: 0

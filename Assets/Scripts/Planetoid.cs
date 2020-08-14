@@ -12,6 +12,11 @@ public class Planetoid : MonoBehaviour
     [SerializeField]
     Material material;
 
+    [SerializeField]
+    Material trailRendererMaterialStart;
+    [SerializeField]
+    Material trailRendererMaterialEscape;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +24,7 @@ public class Planetoid : MonoBehaviour
         {
             celestialBody.AddForce(startingVelocity);
             celestialBody.GetBody().GetComponent<Renderer>().material = material;
+            celestialBody.GetComponent<TrailRenderer>().material = trailRendererMaterialStart;
         }
     }
 }

@@ -20,6 +20,9 @@ public class CelestialBody : MonoBehaviour
 
     Vector3 force = new Vector3(0f, 0f, 0f);
 
+    [SerializeField]
+    bool printVelocities = false;
+
     private void Awake()
     {
         rb = gameObject.GetComponentInChildren<Rigidbody>();
@@ -82,6 +85,11 @@ public class CelestialBody : MonoBehaviour
     public Transform GetBody()
     {
         return body;
+    }
+
+    public bool GetPrintVelocities()
+    {
+        return printVelocities;
     }
 
     public void Die()
